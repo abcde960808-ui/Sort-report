@@ -2,28 +2,28 @@
 
 **學號**：11428111  
 **姓名**：魏銘宏  
-**線上演示頁面**：[點此開啟首頁]([https://abcde960808.github.io/sort-report/index.html)  
+**線上演示頁面**：[點此開啟首頁](https://abcde960808.github.io/sort-report/index.html)  
 
 報告內容包括以下各節，點擊標題可直接跳轉至各演算法的視覺化實驗頁面。
 
 ---
 
-## 🔗 [氣泡排序法 (Bubble Sort)](bubble.html)
+## 🔗 [氣泡排序法 (Bubble Sort)](https://abcde960808.github.io/sort-report/bubble.html)
 * **原理**：重複走訪序列，比較相鄰元素並交換，每一輪將最大值「浮」到末端。
 * **複雜度**：平均 O(n²) / 空間 O(1)。
 
-## 🔗 [選擇排序法 (Selection Sort)](selection.html)
+## 🔗 [選擇排序法 (Selection Sort)](https://abcde960808.github.io/sort-report/selection.html)
 * **原理**：每一輪從未排序部分找到最小值，與未排序部分的第一個元素交換。
 * **複雜度**：平均 O(n²) / 空間 O(1)。
 
-## 🔗 [插入排序法 (Insertion Sort)](insertion.html)
+## 🔗 [插入排序法 (Insertion Sort)](https://abcde960808.github.io/sort-report/insertion.html)
 * **原理**：將資料分為已排序與未排序，逐一將未排序元素插入到已排序序列的正確位置。
 * **複雜度**：平均 O(n²) / 空間 O(1)。
 
-## 🔗 [合併排序法 (Merge Sort)](merge.html)
+## 🔗 [合併排序法 (Merge Sort)](https://abcde960808.github.io/sort-report/merge.html)
 * **原理**：採用分治法，將序列對半拆解直到剩一個元素，再兩兩「合併」成有序序列。
 * **複雜度**：平均 O(n log n) / 空間 O(n)。
 
-## 🔗 [快速排序法 (Quick Sort)](quick.html)
+## 🔗 [快速排序法 (Quick Sort)](https://abcde960808.github.io/sort-report/quick.html)
 * **原理**：選定一個基準值 (Pivot)，將序列分為小於與大於基準值的兩部分，遞迴排序。
 * **複雜度**：平均 O(n log n) / 空間 O(log n)。

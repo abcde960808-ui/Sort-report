@@ -2,7 +2,7 @@
 
 **學號**：11428111  
 **姓名**：魏銘宏  
-**線上演示頁面**：[點此開啟首頁](https://abcde960808.github.io/sort-report/index.html)  
+**線上演示頁面**：[點此開啟首頁](https://abcde960808.github.io/Sort-report/index.html)  
 
 報告內容包括以下各節，點擊標題可直接跳轉至各演算法的視覺化實驗頁面。
 

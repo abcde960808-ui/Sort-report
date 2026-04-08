@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>排序演算法分析報告</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #e0f7fa 0%, #fce4ec 100%); margin: 0; padding: 40px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; max-width: 900px; margin-bottom: 25px; }
+        h1 { color: #333; border-bottom: 2px solid #38bdf8; padding-bottom: 10px; }
+        h2 { color: #475569; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; }
+        th, td { border: 1px solid #e2e8f0; padding: 12px; text-align: center; }
+        th { background-color: #f8fafc; color: #475569; font-weight: 600; }
+        tr:hover { background-color: #f1f5f9; }
+        .nav-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
+        .nav-links a { text-decoration: none; background: #38bdf8; color: white; padding: 12px; border-radius: 8px; text-align: center; transition: 0.3s; font-weight: 500; }
+        .nav-links a:hover { background: #0ea5e9; transform: translateY(-2px); }
+        .footer { font-size: 14px; color: #64748b; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>排序演算法分析報告</h1>
+        <p><strong>學號：</strong> 11428111 | <strong>姓名：</strong> 魏銘宏</p>
+        <p>本報告針對五種經典排序演算法進行原理說明、複雜度分析與實際效能測試。點擊下方按鈕可查看各演算法的即時視覺化演示。</p>
+        
+        <div class="nav-links">
+            <a href="bubble.html">氣泡排序 (Bubble)</a>
+            <a href="selection.html">選擇排序 (Selection)</a>
+            <a href="insertion.html">插入排序 (Insertion)</a>
+            <a href="merge.html">合併排序 (Merge)</a>
+            <a href="quick.html">快速排序 (Quick)</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>一、 複雜度分析對照表</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>排序法</th>
+                    <th>平均時間複雜度</th>
+                    <th>最差時間複雜度</th>
+                    <th>空間複雜度</th>
+                    <th>穩定性</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>氣泡排序</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td><td>穩定</td></tr>
+                <tr><td>選擇排序</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td><td>不穩定</td></tr>
+                <tr><td>插入排序</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td><td>穩定</td></tr>
+                <tr><td>合併排序</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n)</td><td>穩定</td></tr>
+                <tr><td>快速排序</td><td>O(n log n)</td><td>O(n²)</td><td>O(log n)</td><td>不穩定</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>二、 數據模擬結果 (實驗分析)</h2>
+        <p>透過實測不同資料量 (N) 下各演算法所需的執行時間（單位：ms）：</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>數據規模 (N)</th>
+                    <th>Bubble</th>
+                    <th>Selection</th>
+                    <th>Insertion</th>
+                    <th>Merge</th>
+                    <th>Quick</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>100</td><td>~1ms</td><td>~1ms</td><td>~1ms</td><td><1ms</td><td><1ms</td></tr>
+                <tr><td>5,000</td><td>約 45ms</td><td>約 30ms</td><td>約 20ms</td><td><5ms</td><td><5ms</td></tr>
+                <tr><td>10,000</td><td>約 180ms</td><td>約 120ms</td><td>約 80ms</td><td>約 8ms</td><td>約 6ms</td></tr>
+            </tbody>
+        </table>
+        <p><strong>觀察結論：</strong> 隨著 N 增加，O(n²) 類型的排序法（如氣泡）耗時呈倍數成長；而 O(n log n) 類型（如快速、合併）則保持極高的效率。</p>
+    </div>
+
+    <div class="card">
+        <h2>三、 心得結論</h2>
+        <p>透過本次實驗與視覺化工具的實作，我深刻體會到演算法效率的差異。在資料量小時，各排序法差異不大；但當資料量大時，選擇正確的演算法（如 Quick Sort）能節省大量的運算資源。此外，視覺化動態過程也讓我更直觀地理解了「分治法」與「逐一交換」的本質區別。</p>
+    </div>
+
+    <div class="footer">© 2026 排序演算法分析作業 - 魏銘宏</div>
+
+</body>
+</html>

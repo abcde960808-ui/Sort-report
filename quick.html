@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>快速排序視覺化</title>
+    <style>
+        body { background-color: #0f172a; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .visual-container { display: flex; align-items: flex-end; justify-content: center; height: 300px; gap: 4px; margin: 40px 0; width: 90%; }
+        .bar { background-color: #38bdf8; width: 30px; transition: 0.1s; position: relative; border-radius: 4px 4px 0 0; }
+        .bar-val { position: absolute; top: -25px; width: 100%; text-align: center; font-size: 12px; }
+        button { background: #38bdf8; border: none; padding: 10px 20px; color: white; border-radius: 5px; cursor: pointer; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>快速排序法 (Quick Sort)</h1>
+    <div class="visual-container" id="container"></div>
+    <div>
+        <button onclick="resetArray()">重置數據</button>
+        <button id="startBtn" onclick="startSort()">開始排序</button>
+        <button onclick="window.location.href='index.html'">回報告首頁</button>
+    </div>
+    <script>
+        let data = [];
+        const container = document.getElementById('container');
+        function resetArray() { data = Array.from({length: 15}, () => Math.floor(Math.random() * 90) + 10); render(); }
+        function render(active = []) {
+            container.innerHTML = '';
+            data.forEach((v, i) => {
+                const b = document.createElement('div'); b.className = 'bar'; b.style.height = `${v * 3}px`;
+                if (active.includes(i)) b.style.backgroundColor = '#fb923c';
+                const s = document.createElement('div'); s.className = 'bar-val'; s.innerText = v;
+                b.appendChild(s); container.appendChild(b);
+            });
+        }
+        async function startSort() {
+            document.getElementById('startBtn').disabled = true;
+            await qSort(0, data.length - 1); render();
+            document.getElementById('startBtn').disabled = false;
+        }
+        async function qSort(low, high) {
+            if (low < high) {
+                let pi = await partition(low, high);
+                await qSort(low, pi - 1); await qSort(pi + 1, high);
+            }
+        }
+        async function partition(low, high) {
+            let pivot = data[high], i = low - 1;
+            for (let j = low; j < high; j++) {
+                render([j, high]); await new Promise(r => setTimeout(r, 100));
+                if (data[j] < pivot) { i++; [data[i], data[j]] = [data[j], data[i]]; render(); }
+            }
+            [data[i + 1], data[high]] = [data[high], data[i + 1]]; return i + 1;
+        }
+        resetArray();
+    </script>
+</body>
+</html>
